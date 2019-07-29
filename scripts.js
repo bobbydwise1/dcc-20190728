@@ -11,6 +11,52 @@ You run an e-commerce website and want to record the last N order ids in a log. 
 You should be as efficient with time and space as possible.
 */
 
+class item {
+  constructor(name, UPC, price) {
+    this.name = name;
+    this.UPC = UPC;
+    this.price = price;
+  }
+}
+
+class order {
+  constructor(person, orders) {
+    this.orderID = orderID;
+    this.person = person;
+    this.orders = [];
+  }
+
+  addOrder(item) {
+    this.orders.push(item)
+    return this.orders;
+  }
+}
+
+class orderLog {
+  this.orderID = 0;
+  this.nameID = 0;
+  constructor(person, orders) {
+    this.log = [];
+  }
+
+}
+
+class person {
+  constructor(name, address) {
+    this.nameID = nameID;
+    this.name = name;
+    this.address = address;
+  }
+}
+
+let john = new person('John', '123 Evergreen Terrace');
+let jane = new person('Jane', '444 Fourth Street');
+let janice = new person('Janice', '111 Main Ave');
+
+let apple = new item('apple', '5678', 1.50);
+let bannana = new item('bannana', '4011', 1.01);
+let orange = new item('orange', '3321', 2.06);
+
 
 $(document).ready(function() {
   $('#form1').submit(function(event) {
