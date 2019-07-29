@@ -57,29 +57,29 @@ class orderLog {
   }
 }
 
+//first define some person objects
 let john = new person(0, 'John', '123 Evergreen Terrace');
 let jane = new person(1, 'Jane', '444 Fourth Street');
 let janice = new person(2, 'Janice', '111 Main Ave');
-
+//next define some items objects
 let apple = new item('apple', '5678', 1.50);
 let bannana = new item('bannana', '4011', 1.01);
 let orange = new item('orange', '3321', 2.06);
-
+//now define some single orders.  You can add more inventory to a single order.
 let order1 = new order(0, john, apple);
 let order2 = new order(1, jane, bannana);
 order2.addOrder(orange);
-
+//Create the main logging object
 let NewOrderLog = new orderLog;
+//Add some orders to the object using the orderLog.prototype.record(orderid)
 NewOrderLog.record(order1);
 NewOrderLog.record(order2);
-
 console.log('the orderlog class: ',NewOrderLog);
+//you can now use the orderLog.prototype.get_last(i) to retrieve the last nth order
+console.log(NewOrderLog.get_last(0))
+console.log(NewOrderLog.get_last(1))
 
 $(document).ready(function() {
-  $('#form1').submit(function(event) {
-    event.preventDefault();
-    let input1 = $('#input1').val()
-    $('#output-section-1').text(1);
-    $('#output-section-2').text(2);
-  });
+  $('#output-section-1').text(JSON.stringify(NewOrderLog));
+  $('#output-section-2').text(JSON.stringify(NewOrderLog.get_last(1)));
 });

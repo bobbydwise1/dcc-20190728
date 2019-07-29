@@ -27,13 +27,15 @@
     <br>
     <p><b>ANSWER:</b></p>
     <br>
-    <p>:</p>
-    <form id='form1'>
-      <input type='text' id='input1' required minlength='1' pattern='[a-z]{1,}'></input>
-      <button type='submit' id='button1' name='button'>Submit</button>
-      <button type='button' id='button2' name='button'>Pick</button>
-    </form>
-    <p><b>: <span id='output-section-1'></span></b></p>
-    <p><b>: <span id='output-section-2'></span></b></p>
+    <p>Since this is more of a bussiness logic quesiton, there is no actual UI on this HTML page.  Instead, you should inspect the code using your browser's console.  Use your text editor / IDE to look at ./scripts.js.  I'll give an explaination about what I believed was an efficient data structure:</p>
+    <p><b>In Javascript, I've created four classes:</b></p>
+    <ul>
+      <li>A person class: <br><b>john = {"nameID":0,"name":"John","address":"123 Evergreen Terrace"}</b></li>
+      <li>An item class: <br><b>apple = {"name":"apple","UPC":"5678","price":1.5 }</b></li>
+      <li>A single order class, which contain's the person class and an array of items thats inside orders: <br><b>order1 = {"orderID":0,"name":"john", "orders":[apple]}</b><br>It's possible to add more items to the orders array attrtibute using .addOrder(itemClass).</li>
+      <li>The order log class, which contain's multiple orders objects, and the .record(order_id) and .get_last(i) methods:</li>
+    </ul>
+    <p><b><span id='output-section-1'></span></b></p>
+    <p>And in the console if you type <i>NewOrderLog.get_last(1)</i>, you get:<br> <b><span id='output-section-2'></span></b></p>
   </body>
 </html>
